@@ -10,6 +10,9 @@ const roles = [
   { label: 'Admin', value: 'admin' },
 ];
 
+// Backend API URL
+const API_URL = 'http://localhost:5000'; // Add this line
+
 export default function Login() {
   const [selectedRole, setSelectedRole] = useState(roles[0].value);
   const [email, setEmail] = useState('');
@@ -25,7 +28,7 @@ export default function Login() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${API_URL}/api/auth/login`, {  // Update this line
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, role: selectedRole }),
@@ -59,6 +62,7 @@ export default function Login() {
       }
     } catch (err) {
       setError('Network error');
+      console.error('Login error:', err);  // Add more detailed error logging
     } finally {
       setLoading(false);
     }
@@ -111,4 +115,4 @@ export default function Login() {
       </div>
     </div>
   );
-} 
+}
