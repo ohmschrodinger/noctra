@@ -1,0 +1,119 @@
+.sidebar {
+  background: #23262F;
+  color: #fff;
+  width: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+.sidebar-link:hover, .sidebar-link.active {
+  background: #181A20;
+  border-left: 4px solid #3772FF;
+  color: #3772FF;
+}
+.sidebar-icon {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+.sidebar-profile {
+  background: #181A20;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid #353945;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.sidebar-profile-btn {
+  background: #23262F;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.sidebar-profile-btn:hover {
+  background: #353945;
+}
+.sidebar-profile-icon {
+  font-size: 1.2rem;
+}
+.sidebar-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.sidebar-profile-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.sidebar-profile-email {
+  font-size: 0.95rem;
+  color: #777E90;
+}
+.sidebar-logout-btn {
+  background: none;
+  color: #ff4d4f;
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+.sidebar-logout-btn:hover {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 60px;
+    min-width: 60px;
+  }
+  .sidebar-link {
+    padding: 0.75rem 0.5rem;
+    font-size: 1.2rem;
+  }
+  .sidebar-label {
+    display: none;
+  }
+  .sidebar-profile {
+    padding: 1rem 0.5rem;
+  }
+  .sidebar-profile-info, .sidebar-profile-btn span {
+    display: none;
+  }
+} 
